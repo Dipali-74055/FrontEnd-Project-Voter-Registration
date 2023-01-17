@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/240c369354.js" crossorigin="anonymous"></script>
+    <script src="blog.js" defer></script>
+    
+    <title>blog-join2</title>
+  </head>
+ 
+  <body>
+    
+    <div class="navigation-bar">
+        <nav class="navigation">
+          <a href="index.html">Home</a>
+          <a href="#">Nation</a>
+          <a href="#">Sports</a>
+          <a href="#">Politics</a>
+          <a href="#">Entertainment</a>
+          <a href="#">Search</a>
+          <a href="#">Contact Us</a>
+        </nav>
+      </div>
+      <hr>
+      <div class="blog-3">
+        <img src="blog3.png" alt="Image Loading">
+        <h2>No, That’s Not How You Say It</h2>
+        <div class="voting">
+            <button id="likebtn">
+                <i class="fa-solid fa-thumbs-up"></i>
+            </button>
+            <button id="dislikebtn">
+                <i class="fa-solid fa-thumbs-down"></i>
+            </button><br>
+            <input type="number" onclick="count()" class="votes" id="input1" value="0" name="">
+            <input type="number" onclick="count()" class="votes" id="input2" value="0" name="">
+                  
+        <p>Mumbai is the city of dreams. The city of stars! Everyone knows that. But what we often forget is that aside from the hustling and bustling, this city is also a food heaven. There are century-old restaurants in Mumbai and then there are new establishments celebrated by everyone. There are authentic Maharashtrian cuisines and then there is varied Indian street food. There’s so much that it’s easy to miss out. But not in the watch of these Mumbai food bloggers.</p><br><p1>The rise of this new influencer marketing niche is food blogging on Instagram has been one of the most coveted professions in this era of influencer marketing. And why not? They get to scout the best food in the city, the get to travel, have new experiences, and make a living out of living a happening life. But that is not all it takes to become a food influencer or a social media influencer.</p1>
+        
+        <p><b> VIP Singh </b></p>
+        <h4>Jan 29 · 8 min read</h4>
+    </div>
+
+
+      <style>
+        .blog-3{
+            justify-content: center;
+            padding:10px 10px 10px 10px;
+        } 
+        .blog-3 img{
+            float:right;
+            overflow: hidden;
+        }
+        .blog-3 p{
+            font-size: 20px;
+            word-spacing: 1px;
+            line-height: 150%;
+        }
+        .blog-3 p1{
+    
+            font-size: 20px;
+      }
+      #likebtn{
+        height: 70px;
+        width: 70px;
+        border-radius: 70%;
+        border: 1px solid #575656 ;
+        cursor: pointer;
+        
+      }
+      #dislikebtn{
+        height: 70px;
+        width: 70px;
+        border-radius: 70%;
+        border: 1px solid #575656 ;
+        cursor: pointer;
+        
+      }
+      .fa-thumbs-up{
+        font-size: 40px;
+        color: green;
+      }
+      .fa-thumbs-down{
+        font-size: 40px;
+        color: red;
+      }
+      
+      
+      input{
+        width: 50px;
+        background: none;
+        border: none;
+        color:rgb(31, 29, 29);
+        font-size:20px;
+        font-weight: bold;
+        text-align: center;
+        
+      }
+      #input1{
+        margin-left: 15px;
+      }
+      #input2{
+        margin-left: 20px;
+      }
+      #totalvotes{
+
+        width:6em;
+        height: 30px;
+        border: 1px solid #575656;
+        box-shadow: 0px 3px 3px #575656;
+        font-size: 20px;
+        overflow: hidden;
+        margin-left: 10px;
+        padding-right: 80px;
+      }
+      button:active{
+        transform: scale(1.2);
+      }
+      
+    </style>
+    
+      
+      <script type="text/javascript">
+    
+    function updateCounter() {
+    fetch('https://api.countapi.xyz/update/satyamkharote/myblog/?amount=1')
+        .then(res => res.json())
+        .then(data => counterElement.innerHTML= data.value)
+}
+
+updateCounter()
+
+counterElement = document.getElementsByClassName('votes')[0];
+
+
+
+      let likebtn = document.querySelector('#likebtn');
+      let dislikebtn = document.querySelector('#dislikebtn');
+      let input1 = document.querySelector('#input1');
+      let input2 = document.querySelector('#input2');
+      let total = document.querySelector('#totalcount');
+
+      likebtn.addEventListener('click',() => { 
+        input1.value = parseInt(input1.value) + 1;
+      
+        function incrementValue()
+        {
+    var value = parseInt(document.getElementById('input1').value, 1);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('input1').value = value;
+}
+      })
+      dislikebtn.addEventListener('click',()=>{
+        input2.value = parseInt(input2.value) + 1;
+      })
+      
+    
+
+
+      </script>
+      </body>
+      </html>
